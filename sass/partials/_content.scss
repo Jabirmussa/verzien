@@ -1,0 +1,813 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+body {
+  background: radial-gradient(
+    closest-side at 49% 50%,
+    #f5d839 0%,
+    #d95a0d 100%
+  );
+  background-repeat: repeat;
+  background-size: cover;
+}
+body.lock-scrollbar{
+  overflow: hidden;
+}
+
+.wrapper {
+  max-width: 1240px;
+  width: 80%;
+  margin: 0 auto;
+}
+.wrapper-small {
+  max-width: 1030px;
+}
+.cover-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+header {
+  position: fixed;
+  top: 0;
+  z-index: 20;
+  width: 100%;
+  height: 324px;
+  display: flex;
+  justify-content: space-between;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    10deg,
+    rgba(255, 255, 255, 0) 50%,
+    rgba(208, 105, 60, 1) 100%
+  );
+
+  .logo {
+    z-index: 100;
+    background-color: $color-white;
+    height: 150px;
+    width: 150px;
+    border-radius: 49% 51% 100% 0% / 0% 48% 52% 100%;
+    display: flex;
+    align-items: center;
+    > img {
+      width: 100px;
+      height: 100px;
+    }
+  }
+  .menu{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    visibility: hidden;
+  }
+  nav{
+    ul {
+      margin: 20px;
+      @include breakpoint-tablet {
+        display: flex;
+      }
+      li a {
+        padding: 10px;
+        color: $color-white;
+        font-size: 22px;
+        font-family: Neucha;
+        &:hover {
+          color: $color-green;
+        }
+      }
+    }
+  }
+  button{
+    background: none;
+    outline: none;
+    border: 0;
+  }
+  .menu-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-image: url("/images/menu.svg");
+    background-size: cover;
+    cursor: pointer;
+    z-index: 3;
+    @include breakpoint-tablet {
+      display: none;
+    }
+  }
+  .menu {
+    position: fixed;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    z-index: 2;
+    @include breakpoint-tablet {
+      display: block;
+    }
+  }
+  .menu nav li{
+    display: flex;
+  }
+  .menu nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    visibility: hidden;
+    @include breakpoint-tablet {
+      visibility: visible;
+      align-items: flex-end;
+    }
+  }
+  
+  .menu nav li a {
+    text-decoration: none;
+    font-size: 40px;
+    font-weight: 700;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    opacity: 1;
+    transition: 0.25s;
+    @include breakpoint-tablet {
+      font-size: 22px;
+      padding: 15px;
+      font-weight: lighter;
+    }
+  }
+  .menu nav:hover a:not(:hover) {
+    opacity: 0.5;
+    @include breakpoint-tablet {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes show {
+    0% {
+      opacity: 0;
+      translate: 0 -30px;
+    }
+    100% {
+      opacity: 1;
+      translate: 0 0;
+    }
+  }
+  .backdrop {
+    position: fixed;
+    top: 20px;
+    height: 100vh;
+    aspect-ratio: 1 / 1;
+    translate: -50% -50%;
+    scale: 0;
+    opacity: 0;
+    background-color: rgba(187, 70, 31, 0.8);
+    border-radius: 50%;
+    z-index: 1;
+    transition: all 0.6s;
+    @include breakpoint-tablet {
+      display: none;
+    }
+  }
+}
+body.open .menu a {
+  animation: show 0.3s backwards;
+}
+body.open .menu nav {
+  visibility: visible;
+}
+body.open .backdrop {
+  opacity: 1;
+  scale: 5;
+}
+body.open .menu-btn{
+  background-image: url("/images/close.svg");
+}
+.headeractive {
+  animation: active 1s ease forwards;
+  background: linear-gradient(
+    10deg,
+    rgba(255, 255, 255, 0) 55%,
+    rgba(208, 105, 60, 1) 100%
+  );
+}
+
+.quote-image {
+  position: relative;
+  height: 57vh;
+  @include breakpoint-tablet {
+    height: 50vh;
+  }
+  @include breakpoint-desktop-small {
+    height: 100vh
+  }
+  img {
+    position: absolute;
+    top: 350px;
+    width: 380px;
+    left: 25px;
+    @include breakpoint-tablet {
+      top: 200px;
+    }
+    @include breakpoint-desktop-small {
+      height: 460px;
+      width: 546px;
+      top: 170px;
+      left: 86px;
+    }
+  }
+  .image {
+    -webkit-clip-path: url(#my-clip-path);
+    clip-path: url(#my-clip-path);
+    height: 51vh;
+    width: 105vw;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+    @include breakpoint-tablet {
+      width: 84vw;
+    }
+    @include breakpoint-desktop-small {
+      height: 100vh;
+      width: 85vw;
+    }
+    > img {
+      display: block;
+      position: absolute;
+      inset: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+
+.qt {
+  position: relative;
+  .quote {
+    position: absolute;
+    top: -100px;
+    left: 33px;
+    width: 78%;
+    @include breakpoint-desktop-small {
+      top: -464px;
+      left: -10px;
+      width: 35%;
+    }
+    @include breakpoint-desktop-medium {
+      top: -464px;
+      position: absolute;
+      left: -10px;
+      width: 35%;
+    }
+    @include breakpoint-desktop-large {
+      top: -652px;
+      position: absolute;
+      left: -209px;
+      width: 35%;
+    }
+    p{
+      text-align: center;
+      font-size: 22px;
+      font-family: "Neucha";
+      color: $color-white;
+    }
+    h1{
+      font-size: 22px;
+      font-family: "Garden Grown US", sans-serif;
+      text-align: center;
+      color: $color-white;
+      font-weight: lighter;
+      @include breakpoint-desktop-small {
+        font-size: 40px;
+      }
+    }
+  }
+}
+
+.body-text .wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 120px;
+  @include breakpoint-desktop-small {
+    margin-top: 0px;
+  }
+  .imag {
+    position: absolute;
+    z-index: 6;
+    transform: translateY(-266%);
+    clip-path: url(#my-clip-path2);
+    height: 20%;
+    width: 43%;
+    overflow: hidden;
+    @include breakpoint-tablet {
+      height: 20%;
+      width: 25%;
+    }
+    @include breakpoint-desktop-small {
+      transform: translateY(0%);
+      top: 0;
+      right: -94px;
+      height: 45%;
+      width: 25%;
+    }
+    .svg2 {
+      position: absolute;
+      width: 0;
+      height: 0;
+    }
+    img {
+      display: block;
+      position: absolute;
+      inset: 0;
+      height: 100%;
+      width: 100%;
+      -o-object-fit: cover;
+      object-fit: cover;
+    }
+  }
+  .body {
+    position: relative;
+    padding: 40px 20px 50px 40px;
+    background-color: $color-white;
+    border-radius: 0 100px;
+    margin-bottom: -20px;
+    @include breakpoint-tablet {
+      padding: 64px 142px;
+    }
+    h3 {
+      font-size: 50px;
+      font-family: "Garden Grown US", sans-serif;
+      font-weight: lighter;
+      color: $color-green;
+      line-height: 1;
+      margin-bottom: 40px;
+      @include breakpoint-tablet {
+        font-size: 70px;
+      }
+    }
+    p {
+      font-size: 22px;
+      font-family: Neucha;
+      color: #d95a0d;
+      margin-bottom: 40px;
+    }
+    button {
+      position: absolute;
+      z-index: 2;
+      padding: 13px 34px;
+      font-size: 22px;
+      background-color: $color-green;
+      border: none;
+      font-family: "Garden Grown US", sans-serif;
+      font-weight: lighter;
+      border-radius: 0 30px;
+      transform: translateY(25%);
+      @include breakpoint-tablet {
+        font-size: 40px;
+      }
+      a {
+        color: $color-white;
+      }
+    }
+  }
+}
+.shape-final{
+  img{
+    position: absolute;
+    z-index: -1;
+   width: 70%;
+   margin-top: -90px;
+   @include breakpoint-tablet {
+    margin-top: -280px;
+   }
+   @include breakpoint-desktop-small {
+    margin-top: -480px;
+   }
+  }
+}
+.over{
+  overflow: hidden;
+}
+.over-views-shape {
+  display: flex;
+  .shape > img {
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    width: 76%;
+  }
+  .wrapper h1 {
+    position: relative;
+    z-index: 3;
+    color: $color-white;
+    font-size: 120px;
+    font-family: "Garden Grown US";
+    font-weight: lighter;
+    @include breakpoint-tablet {
+      font-size: 150px;
+      margin-bottom: 200px;
+    }
+    @include breakpoint-desktop-small {
+      font-size: 150px;
+      margin-bottom: 40px;
+    }
+  }
+  .over-views {
+    position: relative;
+    z-index: 3;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    @include breakpoint-tablet {
+      grid-template-columns: 1fr 1fr;
+      justify-content: center;
+    }
+    @include breakpoint-desktop-small {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    img {
+      border-radius: 0 100px;
+    }
+    .over-view {
+      position: relative;
+      background-color: $color-white;
+      border-radius: 0 100px;
+      @include breakpoint-tablet {
+        margin-bottom: 50px;
+      }
+      @include breakpoint-desktop-large {
+        width: 400px;
+      }
+
+      &:nth-child(2) {
+        top: 0;
+        @include breakpoint-tablet {
+          top: -180px;
+        }
+      }
+      &:nth-child(3) {
+        top: 0;
+        margin-bottom: 20px;
+        @include breakpoint-tablet {
+          top: -40px;
+        }
+      }
+      h3 {
+        margin: 30px 48px;
+        font-size: 40px;
+        font-family: "Garden Grown US";
+        font-weight: lighter;
+        color: $color-green;
+        @include breakpoint-desktop-small {
+          line-height: 50px;
+          font-size: 46px;
+          margin: 30px 55px;
+        }
+      }
+      p {
+        margin: 30px 48px;
+        font-size: 22px;
+        font-family: "Neucha";
+        color: #d95a0d;
+        @include breakpoint-desktop-small {
+          margin: 30px 55px;
+        }
+      }
+      a {
+        display: flex;
+        justify-content: end;
+        text-align: right;
+        text-decoration: underline;
+        font-size: 40px;
+        font-family: "Garden Grown US";
+        color: $color-green;
+        margin-right: 55px;
+      }
+      img {
+        width: 100%;
+      }
+    }
+  }
+  button {
+    position: relative;
+    z-index: 3;
+    border-radius: 0 30px 0;
+    background-color: $color-white;
+    border: none;
+    font-family: "Garden Grown US";
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 150px;
+    @include breakpoint-desktop-small {
+      top: -120px;
+      margin-bottom: 0px;
+    }
+    a {
+      font-size: 40px;
+      padding: 13px 34px;
+      color: $color-green;
+    }
+  }
+}
+section.points {
+  position: fixed;
+  right: 5px;
+  z-index: -1;
+  @include breakpoint-tablet {
+    right: 30px;
+  }
+}
+
+.gedichtens-over {
+  position: relative;
+  @include breakpoint-tablet {
+    margin-top: 120px;
+    margin-bottom: 120px;
+  }
+  .shape-final{
+    img{
+      position: absolute;
+      z-index: -1;
+     width: 70%;
+     margin-top: -110px;
+     @include breakpoint-tablet {
+      margin-top: -190px;
+     }
+     @include breakpoint-desktop-small {
+      margin-top: -310px;
+     }
+    }
+  }
+  .shape {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    right: 0;
+    margin-top: 11px;
+    @include breakpoint-tablet {
+      width: 83%;
+      margin-top: 0;
+    }
+  }
+  .wrapper {
+    h1 {
+      text-align: center;
+      font-family: "Garden Grown US";
+      color: $color-white;
+      font-size: 80px;
+      font-weight: lighter;
+      margin-top: 60px;
+      @include breakpoint-tablet {
+        margin-top: 30px;
+        font-size: 100px;
+      }
+      @include breakpoint-desktop-small {
+        font-size: 150px;
+      }
+    }
+    .gedichtens {
+      position: relative;
+      z-index: 4;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      @include breakpoint-tablet {
+        grid-template-columns: 1fr 1fr;
+      }
+      @include breakpoint-desktop-small {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+      .gedichten {
+        position: relative;
+        background-image: url(/assets/gedicheten_back.png);
+        background-position: center;
+        background-size: cover;
+        padding: 110px 70px 150px 35px;
+        margin-bottom: 80px;
+        @include breakpoint-desktop-large {
+          width: 400px;
+        }
+
+        &:nth-child(1) {
+          @include breakpoint-tablet {
+            top: 60px;
+          }
+        }
+        &:nth-child(3) {
+          @include breakpoint-tablet {
+            top: 30px;
+          }
+        }
+        h4 {
+          color: $color-orange;
+          font-family: "Garden Grown US";
+          font-size: 70px;
+          font-weight: lighter;
+          margin-bottom: 10px;
+        }
+        p {
+          font-size: 20px;
+          font-family: "Neucha";
+          color: $color-orange;
+        }
+        .btn1 {
+          position: absolute;
+          transform: translateY(50%);
+          bottom: 0;
+          background-color: $color-orange;
+          a {
+            color: $color-white;
+          }
+        }
+      }
+    }
+    button {
+      display: flex;
+      margin: 0 auto;
+      padding: 8px 24px;
+      border-radius: 0 30px;
+      border: none;
+      background-color: $color-white;
+      // margin-bottom: 50px;
+      @include breakpoint-tablet {
+        padding: 4px 34px;
+      }
+      a {
+        color: $color-orange;
+        font-size: 40px;
+        font-family: "Garden Grown US";
+      }
+    }
+  }
+}
+
+.body-blog {
+  position: relative;
+  margin-top: -320px;
+  left: 0;
+  h4 {
+    color: $color-green;
+    font-size: 30px;
+    font-family: "Garden Grown US";
+    font-weight: lighter;
+    @include breakpoint-tablet {
+      font-size: 36px;
+    }
+  }
+}
+.top{
+  position: relative;
+  margin-top: -360px;
+}
+.up{
+  margin-top: -315px;
+  @include breakpoint-desktop-medium {
+    margin-top: -625px;
+  }
+}
+.wrapper {
+  .title{
+    position: relative;
+    text-align: center;
+    margin-top: 100px;
+    @include breakpoint-desktop-medium {
+      top: -170px;
+    }
+  }
+}
+.main-footer{
+ img{
+  margin-bottom: -4.92px;
+ }
+ footer{
+   background-color: $color-white;
+   img{
+     position: relative;
+     margin-bottom: -20px;
+     left: -58px;
+     width: 240px;
+    @include breakpoint-desktop-small {
+      width: 30%;
+      bottom: -3px;
+      position: relative;
+      left: -132px;
+    }
+   }
+   .row{
+    display: block;
+    @include breakpoint-tablet {
+      display: flex;
+      justify-content: space-around;
+    }
+   
+    .footer-col{
+      padding-right: 100px;
+      margin-top: 30px;
+      margin-bottom: 50px;
+      &:nth-child(3){
+        a{
+          text-decoration: underline;
+        }
+      }
+      &:nth-child(4){
+        margin-right: 89px;
+        margin-bottom: 90px;
+        @include breakpoint-tablet {
+          margin-right: 103px;
+        }
+        a{
+          text-decoration: underline;
+        }
+      }
+      @include breakpoint-tablet {
+        margin-top: 0px;
+      }
+      @include breakpoint-desktop-small {
+        margin-top: -90px;
+      }
+      h4{
+        font-size: 36px;
+        font-family: "Garden Grown US";
+        color: $color-green;
+        font-weight: lighter;
+        @include breakpoint-tablet {
+          font-size: 50px;
+        }
+      }
+      ul li > a{
+        color: $color-orange;
+        font-family:"Neucha";
+        font-size: 22px;
+      }
+    }
+   }
+ }
+ .links{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 30px;
+  p{
+    font-size: 16px;
+    padding-right: 20px;
+    font-family: "Neucha";
+    color: $color-green;
+    @include breakpoint-tablet {
+      font-size: 20px;
+    }
+  }
+  a{
+    font-family: "Neucha";
+    font-size: 16px;
+    color: $color-green;
+    text-decoration: underline;
+    @include breakpoint-tablet {
+      font-size: 20px;
+    }
+  }
+ }
+}
+
+@include breakpoint-desktop-medium {
+  .animation{
+    filter: blur(3px);
+    transition: 2s;
+    opacity: 0;
+  }
+  .from-left{
+    transform: translateX(-120%);
+    overflow: none;
+  }
+  
+  .from-right{
+    transform: translateX(100%);
+    overflow: none;
+  }
+  
+  .from-top{
+    transform: translateY(-100%);
+    overflow: none;
+  }
+  
+  .animation.show{
+    opacity: 1;
+    filter: blur(0);
+    transform: translate(0);
+    overflow: none;
+  }
+}
