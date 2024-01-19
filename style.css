@@ -430,6 +430,9 @@ body.open .menu-btn {
   color: #fff;
 }
 
+.shape-final .blog {
+  width: 62%;
+}
 .shape-final img {
   position: absolute;
   z-index: -1;
@@ -458,7 +461,7 @@ body.open .menu-btn {
   position: absolute;
   z-index: -1;
   left: 0;
-  width: 76%;
+  width: 66%;
 }
 .over-views-shape .wrapper h1 {
   position: relative;
@@ -567,6 +570,11 @@ body.open .menu-btn {
   font-family: "Garden Grown US";
   color: #3E7531;
   margin-right: 55px;
+}
+@media (min-width: 60rem) {
+  .over-views-shape .over-views .over-view a {
+    margin: 50px;
+  }
 }
 .over-views-shape .over-views .over-view img {
   width: 100%;
@@ -736,9 +744,30 @@ section.points {
 @media (min-width: 48rem) {
   .gedichtens-over .wrapper button {
     padding: 4px 34px;
+    margin-top: 60px;
   }
 }
 .gedichtens-over .wrapper button a {
+  color: #D95A0D;
+  font-size: 40px;
+  font-family: "Garden Grown US";
+}
+
+.btn2 {
+  display: flex;
+  margin: 0 auto;
+  padding: 8px 24px;
+  border-radius: 0 30px;
+  border: none;
+  background-color: #fff;
+}
+@media (min-width: 48rem) {
+  .btn2 {
+    padding: 4px 34px;
+    margin: 50px auto;
+  }
+}
+.btn2 a {
   color: #D95A0D;
   font-size: 40px;
   font-family: "Garden Grown US";

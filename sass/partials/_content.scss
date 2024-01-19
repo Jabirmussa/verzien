@@ -199,7 +199,7 @@ body.open .menu-btn{
     rgba(255, 255, 255, 0) 55%,
     rgba(208, 105, 60, 1) 100%
   );
-}
+  }
 
 .quote-image {
   position: relative;
@@ -385,7 +385,11 @@ body.open .menu-btn{
     }
   }
 }
+
 .shape-final{
+  .blog{
+    width: 62%;
+  }
   img{
     position: absolute;
     z-index: -1;
@@ -408,7 +412,7 @@ body.open .menu-btn{
     position: absolute;
     z-index: -1;
     left: 0;
-    width: 76%;
+    width: 66%;
   }
   .wrapper h1 {
     position: relative;
@@ -496,6 +500,9 @@ body.open .menu-btn{
         font-family: "Garden Grown US";
         color: $color-green;
         margin-right: 55px;
+        @include breakpoint-desktop-small {
+          margin: 50px;
+        }
       }
       img {
         width: 100%;
@@ -637,16 +644,16 @@ section.points {
         }
       }
     }
-    button {
+    button{
       display: flex;
       margin: 0 auto;
       padding: 8px 24px;
       border-radius: 0 30px;
       border: none;
       background-color: $color-white;
-      // margin-bottom: 50px;
       @include breakpoint-tablet {
         padding: 4px 34px;
+        margin-top: 60px;
       }
       a {
         color: $color-orange;
@@ -656,7 +663,23 @@ section.points {
     }
   }
 }
-
+.btn2 {
+  display: flex;
+  margin: 0 auto;
+  padding: 8px 24px;
+  border-radius: 0 30px;
+  border: none;
+  background-color: $color-white;
+  @include breakpoint-tablet {
+    padding: 4px 34px;
+    margin: 50px auto;
+  }
+  a {
+    color: $color-orange;
+    font-size: 40px;
+    font-family: "Garden Grown US";
+  }
+}
 .body-blog {
   position: relative;
   margin-top: -320px;
@@ -681,6 +704,7 @@ section.points {
     margin-top: -625px;
   }
 }
+
 .wrapper {
   .title{
     position: relative;
