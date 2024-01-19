@@ -230,9 +230,9 @@ body.open .menu-btn {
 }
 .quote-image img {
   position: absolute;
-  top: 280px;
-  width: 316px;
-  left: 25px;
+  top: 366px;
+  width: 75vw;
+  left: 53px;
 }
 @media (min-width: 48rem) {
   .quote-image img {
@@ -534,7 +534,7 @@ body.open .menu-btn {
   }
 }
 .over-views-shape .over-views .over-view h3 {
-  margin: 30px 48px;
+  margin: 30px 25px;
   font-size: 40px;
   font-family: "Garden Grown US";
   font-weight: lighter;
@@ -548,7 +548,7 @@ body.open .menu-btn {
   }
 }
 .over-views-shape .over-views .over-view p {
-  margin: 30px 48px;
+  margin: 30px 25px;
   font-size: 22px;
   font-family: "Neucha";
   color: #d95a0d;
