@@ -542,13 +542,15 @@ section.points {
     img{
       position: absolute;
       z-index: -1;
-     width: 70%;
+     width: 58%;
      margin-top: -110px;
      @include breakpoint-tablet {
       margin-top: -190px;
+      width: 70%;
      }
      @include breakpoint-desktop-small {
       margin-top: -310px;
+      width: 58%;
      }
     }
   }
