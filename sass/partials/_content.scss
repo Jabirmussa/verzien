@@ -49,16 +49,11 @@ header {
   );
 
   .logo {
-    z-index: 100;
-    background-color: $color-white;
-    height: 150px;
-    width: 150px;
-    border-radius: 49% 51% 100% 0% / 0% 48% 52% 100%;
-    display: flex;
-    align-items: center;
+    position: relative;
+    z-index: 20;
+    top:0;
     > img {
-      width: 100px;
-      height: 100px;
+      height: 115px;
     }
   }
   .menu{
@@ -254,29 +249,33 @@ body.open .menu-btn{
 
 
 .qt {
-  position: relative;
+  background-image: url(/images/qoute.svg);
+  background-repeat: no-repeat;
+  background-size:auto;
+  object-fit: cover;
   .quote {
-    position: absolute;
-    top: -100px;
-    left: 33px;
-    width: 78%;
-    @include breakpoint-desktop-small {
-      top: -464px;
-      left: -10px;
-      width: 35%;
-    }
-    @include breakpoint-desktop-medium {
-      top: -464px;
-      position: absolute;
-      left: -10px;
-      width: 35%;
-    }
-    @include breakpoint-desktop-large {
-      top: -652px;
-      position: absolute;
-      left: -209px;
-      width: 35%;
-    }
+    overflow: hidden;
+    // position: absolute;
+    // top: -100px;
+    // left: 33px;
+    // width: 78%;
+    // @include breakpoint-desktop-small {
+    //   top: -464px;
+    //   left: -10px;
+    //   width: 35%;
+    // }
+    // @include breakpoint-desktop-medium {
+    //   top: -464px;
+    //   position: absolute;
+    //   left: -10px;
+    //   width: 35%;
+    // }
+    // @include breakpoint-desktop-large {
+    //   top: -652px;
+    //   position: absolute;
+    //   left: -209px;
+    //   width: 35%;
+    // }
     p{
       text-align: center;
       font-size: 22px;
@@ -600,27 +599,33 @@ section.points {
       @include breakpoint-desktop-small {
         grid-template-columns: 1fr 1fr 1fr;
       }
+      .child1 {
+        @include breakpoint-tablet {
+          top: 60px;
+        }
+      }
+      .child3 {
+        @include breakpoint-tablet {
+          top: 30px;
+        }
+      }
       .gedichten {
         position: relative;
-        background-image: url(/assets/gedicheten_back.png);
+        background-image: url(/images/bg.jpeg);
         background-position: center;
         background-size: cover;
-        padding: 110px 70px 150px 35px;
+        padding: 50px 70px 150px 35px;
         margin-bottom: 80px;
         @include breakpoint-desktop-large {
           width: 400px;
         }
+        img{
+          position: absolute;
+          right: 30px;
+          bottom: 50px;
+          width: 12px;
+        }
 
-        &:nth-child(1) {
-          @include breakpoint-tablet {
-            top: 60px;
-          }
-        }
-        &:nth-child(3) {
-          @include breakpoint-tablet {
-            top: 30px;
-          }
-        }
         h4 {
           color: $color-orange;
           font-family: "Garden Grown US";
@@ -654,6 +659,9 @@ section.points {
       @include breakpoint-tablet {
         padding: 4px 34px;
         margin-top: 60px;
+      }
+      @include breakpoint-desktop-small {
+        margin-top: 0px;
       }
       a {
         color: $color-orange;

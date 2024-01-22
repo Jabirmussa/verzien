@@ -52,17 +52,12 @@ header {
   background: linear-gradient(10deg, rgba(255, 255, 255, 0) 50%, rgb(208, 105, 60) 100%);
 }
 header .logo {
-  z-index: 100;
-  background-color: #fff;
-  height: 150px;
-  width: 150px;
-  border-radius: 49% 51% 100% 0%/0% 48% 52% 100%;
-  display: flex;
-  align-items: center;
+  position: relative;
+  z-index: 20;
+  top: 0;
 }
 header .logo > img {
-  width: 100px;
-  height: 100px;
+  height: 115px;
 }
 header .menu {
   flex-direction: column;
@@ -278,36 +273,13 @@ body.open .menu-btn {
 }
 
 .qt {
-  position: relative;
+  background-image: url(/images/qoute.svg);
+  background-repeat: no-repeat;
+  background-size: auto;
+  object-fit: cover;
 }
 .qt .quote {
-  position: absolute;
-  top: -100px;
-  left: 33px;
-  width: 78%;
-}
-@media (min-width: 60rem) {
-  .qt .quote {
-    top: -464px;
-    left: -10px;
-    width: 35%;
-  }
-}
-@media (min-width: 80rem) {
-  .qt .quote {
-    top: -464px;
-    position: absolute;
-    left: -10px;
-    width: 35%;
-  }
-}
-@media (min-width: 90rem) {
-  .qt .quote {
-    top: -652px;
-    position: absolute;
-    left: -209px;
-    width: 35%;
-  }
+  overflow: hidden;
 }
 .qt .quote p {
   text-align: center;
@@ -689,12 +661,22 @@ section.points {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
+@media (min-width: 48rem) {
+  .gedichtens-over .wrapper .gedichtens .child1 {
+    top: 60px;
+  }
+}
+@media (min-width: 48rem) {
+  .gedichtens-over .wrapper .gedichtens .child3 {
+    top: 30px;
+  }
+}
 .gedichtens-over .wrapper .gedichtens .gedichten {
   position: relative;
-  background-image: url(/assets/gedicheten_back.png);
+  background-image: url(/images/bg.jpeg);
   background-position: center;
   background-size: cover;
-  padding: 110px 70px 150px 35px;
+  padding: 50px 70px 150px 35px;
   margin-bottom: 80px;
 }
 @media (min-width: 90rem) {
@@ -702,15 +684,11 @@ section.points {
     width: 400px;
   }
 }
-@media (min-width: 48rem) {
-  .gedichtens-over .wrapper .gedichtens .gedichten:nth-child(1) {
-    top: 60px;
-  }
-}
-@media (min-width: 48rem) {
-  .gedichtens-over .wrapper .gedichtens .gedichten:nth-child(3) {
-    top: 30px;
-  }
+.gedichtens-over .wrapper .gedichtens .gedichten img {
+  position: absolute;
+  right: 30px;
+  bottom: 50px;
+  width: 12px;
 }
 .gedichtens-over .wrapper .gedichtens .gedichten h4 {
   color: #D95A0D;
@@ -745,6 +723,11 @@ section.points {
   .gedichtens-over .wrapper button {
     padding: 4px 34px;
     margin-top: 60px;
+  }
+}
+@media (min-width: 60rem) {
+  .gedichtens-over .wrapper button {
+    margin-top: 0px;
   }
 }
 .gedichtens-over .wrapper button a {
