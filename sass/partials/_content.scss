@@ -20,8 +20,11 @@ body.lock-scrollbar{
 
 .wrapper {
   max-width: 1240px;
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
+  @include breakpoint-tablet {
+    width: 80%;
+  }
 }
 .wrapper-small {
   max-width: 1030px;
