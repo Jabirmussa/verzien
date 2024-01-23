@@ -97,8 +97,8 @@ header .menu-btn {
   position: fixed;
   top: 20px;
   right: 20px;
-  width: 50px;
-  height: 50px;
+  width: 45px;
+  height: 45px;
   background-image: url("/images/menu.svg");
   background-size: cover;
   cursor: pointer;
@@ -206,6 +206,8 @@ body.open .backdrop {
 }
 
 body.open .menu-btn {
+  width: 43px;
+  height: 35px;
   background-image: url("/images/close.svg");
 }
 
@@ -278,13 +280,19 @@ body.open .menu-btn {
 }
 
 .qt {
-  background-image: url(/images/qoute.svg);
+  position: relative;
   background-repeat: no-repeat;
   background-size: auto;
   object-fit: cover;
+  top: -100px;
+}
+.qt img {
+  width: clamp(200px, 100%, 700px);
 }
 .qt .quote {
   overflow: hidden;
+  position: relative;
+  top: -170px;
 }
 .qt .quote p {
   text-align: center;
@@ -292,15 +300,23 @@ body.open .menu-btn {
   font-family: "Neucha";
   color: #fff;
 }
+@media (min-width: 60rem) {
+  .qt .quote p {
+    width: 40%;
+  }
+}
 .qt .quote h1 {
   font-size: 22px;
   font-family: "Garden Grown US", sans-serif;
   text-align: center;
   color: #fff;
+  font-size: clamp(1.4rem, 2.5vw, 4.5rem);
   font-weight: lighter;
+  width: 95%;
 }
 @media (min-width: 60rem) {
   .qt .quote h1 {
+    width: 40%;
     font-size: 40px;
   }
 }
@@ -310,7 +326,12 @@ body.open .menu-btn {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 120px;
+  margin-top: -80px;
+}
+@media (min-width: 48rem) {
+  .body-text .wrapper {
+    margin-top: 120px;
+  }
 }
 @media (min-width: 60rem) {
   .body-text .wrapper {
@@ -514,11 +535,12 @@ body.open .menu-btn {
   }
 }
 .over-views-shape .over-views .over-view h3 {
-  margin: 30px 25px;
+  margin: 20px 25px;
   font-size: 40px;
   font-family: "Garden Grown US";
   font-weight: lighter;
   color: #3E7531;
+  line-height: 1;
 }
 @media (min-width: 60rem) {
   .over-views-shape .over-views .over-view h3 {

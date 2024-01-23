@@ -92,8 +92,8 @@ header {
     position: fixed;
     top: 20px;
     right: 20px;
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     background-image: url("/images/menu.svg");
     background-size: cover;
     cursor: pointer;
@@ -188,6 +188,8 @@ body.open .backdrop {
   scale: 5;
 }
 body.open .menu-btn{
+  width: 43px;
+  height: 35px;
   background-image: url("/images/close.svg");
 }
 .headeractive {
@@ -252,46 +254,37 @@ body.open .menu-btn{
 
 
 .qt {
-  background-image: url(/images/qoute.svg);
+  position: relative;
   background-repeat: no-repeat;
   background-size:auto;
   object-fit: cover;
+  top: -100px;
+  img{
+    width: clamp(200px, 100%, 700px);
+  }
   .quote {
     overflow: hidden;
-    // position: absolute;
-    // top: -100px;
-    // left: 33px;
-    // width: 78%;
-    // @include breakpoint-desktop-small {
-    //   top: -464px;
-    //   left: -10px;
-    //   width: 35%;
-    // }
-    // @include breakpoint-desktop-medium {
-    //   top: -464px;
-    //   position: absolute;
-    //   left: -10px;
-    //   width: 35%;
-    // }
-    // @include breakpoint-desktop-large {
-    //   top: -652px;
-    //   position: absolute;
-    //   left: -209px;
-    //   width: 35%;
-    // }
+    position: relative;
+    top: -170px;
     p{
       text-align: center;
       font-size: 22px;
       font-family: "Neucha";
       color: $color-white;
+      @include breakpoint-desktop-small {
+        width: 40%;
+      }
     }
     h1{
       font-size: 22px;
       font-family: "Garden Grown US", sans-serif;
       text-align: center;
       color: $color-white;
+      font-size: clamp(1.4rem, 2.5vw, 4.5rem);
       font-weight: lighter;
+      width: 95%;
       @include breakpoint-desktop-small {
+        width: 40%;
         font-size: 40px;
       }
     }
@@ -303,7 +296,10 @@ body.open .menu-btn{
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 120px;
+  margin-top: -80px;
+  @include breakpoint-tablet {
+    margin-top: 120px;
+  }
   @include breakpoint-desktop-small {
     margin-top: 0px;
   }
@@ -473,11 +469,12 @@ body.open .menu-btn{
         }
       }
       h3 {
-        margin: 30px 25px;
+        margin: 20px 25px;
         font-size: 40px;
         font-family: "Garden Grown US";
         font-weight: lighter;
         color: $color-green;
+        line-height: 1;
         @include breakpoint-desktop-small {
           line-height: 50px;
           font-size: 46px;
