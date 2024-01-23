@@ -31,7 +31,7 @@ body.lock-scrollbar {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(12, 12, 12, 0.863);
+  background-color: rgba(213, 88, 46, 0.573);
   transition: opacity 0.75s, visibility 0.75s;
   z-index: 2040;
 }
