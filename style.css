@@ -22,6 +22,33 @@ body.lock-scrollbar {
   overflow: hidden;
 }
 
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(12, 12, 12, 0.863);
+  transition: opacity 0.75s, visibility 0.75s;
+  z-index: 2040;
+}
+
+.loader-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+@keyframes loading {
+  from {
+    transform: rotate(0turn);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
 .wrapper {
   max-width: 1240px;
   width: 90%;
@@ -207,7 +234,7 @@ body.open .backdrop {
 
 body.open .menu-btn {
   width: 43px;
-  height: 35px;
+  height: 45px;
   background-image: url("/images/close.svg");
 }
 
@@ -286,13 +313,37 @@ body.open .menu-btn {
   object-fit: cover;
   top: -100px;
 }
+@media (min-width: 60rem) {
+  .qt {
+    position: absolute;
+    top: -15px;
+  }
+}
 .qt img {
   width: clamp(200px, 100%, 700px);
+}
+@media (min-width: 60rem) {
+  .qt img {
+    position: relative;
+    width: clamp(200px, 50%, 700px);
+    top: 172px;
+    left: 50px;
+  }
 }
 .qt .quote {
   overflow: hidden;
   position: relative;
   top: -170px;
+}
+@media (min-width: 48rem) {
+  .qt .quote {
+    top: -304px;
+  }
+}
+@media (min-width: 60rem) {
+  .qt .quote {
+    top: -140px;
+  }
 }
 .qt .quote p {
   text-align: center;
@@ -306,13 +357,17 @@ body.open .menu-btn {
   }
 }
 .qt .quote h1 {
-  font-size: 22px;
   font-family: "Garden Grown US", sans-serif;
   text-align: center;
   color: #fff;
   font-size: clamp(1.4rem, 2.5vw, 4.5rem);
   font-weight: lighter;
   width: 95%;
+}
+@media (min-width: 48rem) {
+  .qt .quote h1 {
+    font-size: clamp(1.4rem, 4.5vw, 4.5rem);
+  }
 }
 @media (min-width: 60rem) {
   .qt .quote h1 {
@@ -481,6 +536,23 @@ body.open .menu-btn {
     margin-bottom: 40px;
   }
 }
+.over-views-shape .child11 {
+  top: 0;
+}
+@media (min-width: 48rem) {
+  .over-views-shape .child11 {
+    top: -180px;
+  }
+}
+.over-views-shape .child33 {
+  top: 0;
+  margin-bottom: 20px;
+}
+@media (min-width: 48rem) {
+  .over-views-shape .child33 {
+    top: -40px;
+  }
+}
 .over-views-shape .over-views {
   position: relative;
   z-index: 3;
@@ -517,24 +589,7 @@ body.open .menu-btn {
     width: 400px;
   }
 }
-.over-views-shape .over-views .over-view:nth-child(2) {
-  top: 0;
-}
-@media (min-width: 48rem) {
-  .over-views-shape .over-views .over-view:nth-child(2) {
-    top: -180px;
-  }
-}
-.over-views-shape .over-views .over-view:nth-child(3) {
-  top: 0;
-  margin-bottom: 20px;
-}
-@media (min-width: 48rem) {
-  .over-views-shape .over-views .over-view:nth-child(3) {
-    top: -40px;
-  }
-}
-.over-views-shape .over-views .over-view h3 {
+.over-views-shape .over-views h3 {
   margin: 20px 25px;
   font-size: 40px;
   font-family: "Garden Grown US";
@@ -543,24 +598,24 @@ body.open .menu-btn {
   line-height: 1;
 }
 @media (min-width: 60rem) {
-  .over-views-shape .over-views .over-view h3 {
+  .over-views-shape .over-views h3 {
     line-height: 50px;
     font-size: 46px;
     margin: 30px 55px;
   }
 }
-.over-views-shape .over-views .over-view p {
+.over-views-shape .over-views p {
   margin: 30px 25px;
   font-size: 22px;
   font-family: "Neucha";
   color: #d95a0d;
 }
 @media (min-width: 60rem) {
-  .over-views-shape .over-views .over-view p {
+  .over-views-shape .over-views p {
     margin: 30px 55px;
   }
 }
-.over-views-shape .over-views .over-view a {
+.over-views-shape .over-views a {
   display: flex;
   justify-content: end;
   text-align: right;
@@ -571,11 +626,11 @@ body.open .menu-btn {
   margin-right: 55px;
 }
 @media (min-width: 60rem) {
-  .over-views-shape .over-views .over-view a {
+  .over-views-shape .over-views a {
     margin: 50px;
   }
 }
-.over-views-shape .over-views .over-view img {
+.over-views-shape .over-views img {
   width: 100%;
 }
 .over-views-shape button {

@@ -18,6 +18,44 @@ body.lock-scrollbar{
   overflow: hidden;
 }
 
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(12, 12, 12, 0.863);
+  transition: opacity 0.75s, visibility 0.75s ;
+  z-index: 2040;
+}
+
+// .loader::after{
+//     content: "";
+//     width: 75px;
+//     height: 75px;
+//     border: 15px solid #fff;
+//     border-top-color: #D96827;
+//     border-radius: 50%;
+//     animation: loading 0.75s ease infinite;
+// }
+
+.loader-hidden{
+  opacity: 0;
+  visibility: hidden;
+}
+
+@keyframes loading {
+    from{
+        transform: rotate(0turn);
+    }
+    to{
+        transform: rotate(1turn);
+    }
+}
+
 .wrapper {
   max-width: 1240px;
   width: 90%;
@@ -189,7 +227,7 @@ body.open .backdrop {
 }
 body.open .menu-btn{
   width: 43px;
-  height: 35px;
+  height: 45px;
   background-image: url("/images/close.svg");
 }
 .headeractive {
@@ -259,13 +297,29 @@ body.open .menu-btn{
   background-size:auto;
   object-fit: cover;
   top: -100px;
+  @include breakpoint-desktop-small {
+    position: absolute;
+    top: -15px;
+  }
   img{
     width: clamp(200px, 100%, 700px);
+    @include breakpoint-desktop-small {
+      position: relative;
+      width: clamp(200px, 50%, 700px);
+      top: 172px;
+      left: 50px;
+    }
   }
   .quote {
     overflow: hidden;
     position: relative;
     top: -170px;
+    @include breakpoint-tablet {
+      top: -304px;
+    }
+    @include breakpoint-desktop-small {
+      top: -140px;
+    }
     p{
       text-align: center;
       font-size: 22px;
@@ -276,13 +330,15 @@ body.open .menu-btn{
       }
     }
     h1{
-      font-size: 22px;
       font-family: "Garden Grown US", sans-serif;
       text-align: center;
       color: $color-white;
       font-size: clamp(1.4rem, 2.5vw, 4.5rem);
       font-weight: lighter;
       width: 95%;
+      @include breakpoint-tablet {
+        font-size: clamp(1.4rem, 4.5vw, 4.5rem);
+      }
       @include breakpoint-desktop-small {
         width: 40%;
         font-size: 40px;
@@ -428,6 +484,19 @@ body.open .menu-btn{
       margin-bottom: 40px;
     }
   }
+  .child11 {
+    top: 0;
+    @include breakpoint-tablet {
+      top: -180px;
+    }
+  }
+  .child33 {
+    top: 0;
+    margin-bottom: 20px;
+    @include breakpoint-tablet {
+      top: -40px;
+    }
+  }
   .over-views {
     position: relative;
     z-index: 3;
@@ -454,18 +523,6 @@ body.open .menu-btn{
       @include breakpoint-desktop-large {
         width: 400px;
       }
-      &:nth-child(2) {
-        top: 0;
-        @include breakpoint-tablet {
-          top: -180px;
-        }
-      }
-      &:nth-child(3) {
-        top: 0;
-        margin-bottom: 20px;
-        @include breakpoint-tablet {
-          top: -40px;
-        }
       }
       h3 {
         margin: 20px 25px;
@@ -505,7 +562,7 @@ body.open .menu-btn{
       img {
         width: 100%;
       }
-    }
+    
   }
   button {
     position: relative;

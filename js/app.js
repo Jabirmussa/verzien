@@ -1,3 +1,13 @@
+window.addEventListener("load", () => {
+    const loader = document.querySelector(".loader");
+  
+    loader.classList.add("loader-hidden");
+    loader.addEventListener("trasintionend", ()=> {
+      document.body.removeChild("loader");
+    })
+  })
+
+
 const Header = document.querySelector ("header");
 const menuBtn = document.querySelector(".menu-btn");
 const body = document.querySelector("body");
