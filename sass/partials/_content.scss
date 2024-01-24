@@ -444,6 +444,9 @@ body.open .menu-btn{
    }
   }
 }
+.h1{
+  bottom: -23px;
+}
 .over{
   overflow: hidden;
 }
@@ -585,7 +588,7 @@ section.points {
   right: 5px;
   z-index: -1;
   img{
-    width: 8px;
+    width: 5px;
     @include breakpoint-tablet {
       width: 10px;
     }

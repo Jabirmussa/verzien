@@ -505,6 +505,10 @@ body.open .menu-btn {
   }
 }
 
+.h1 {
+  bottom: -23px;
+}
+
 .over {
   overflow: hidden;
 }
@@ -674,7 +678,7 @@ section.points {
   z-index: -1;
 }
 section.points img {
-  width: 8px;
+  width: 5px;
 }
 @media (min-width: 48rem) {
   section.points img {
