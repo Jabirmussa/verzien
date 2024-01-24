@@ -689,14 +689,20 @@ section.points {
         h4 {
           color: $color-orange;
           font-family: "Garden Grown US";
-          font-size: 70px;
+          font-size: 50px;
           font-weight: lighter;
           margin-bottom: 5px;
+          @include breakpoint-tablet {
+            font-size: 70px;
+          }
         }
         p {
-          font-size: 20px;
+          font-size: 18px;
           font-family: "Neucha";
           color: $color-orange;
+          @include breakpoint-tablet {
+            font: 20px;
+          }
         }
         .btn1 {
           position: absolute;
@@ -705,6 +711,10 @@ section.points {
           background-color: $color-orange;
           a {
             color: $color-white;
+            font-size: 30px;
+            @include breakpoint-tablet {
+              font-size: 40px;
+            }
           }
         }
       }

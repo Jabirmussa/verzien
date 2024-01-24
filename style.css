@@ -799,14 +799,24 @@ section.points img {
 .gedichtens-over .wrapper .gedichtens .gedichten h4 {
   color: #D95A0D;
   font-family: "Garden Grown US";
-  font-size: 70px;
+  font-size: 50px;
   font-weight: lighter;
   margin-bottom: 5px;
 }
+@media (min-width: 48rem) {
+  .gedichtens-over .wrapper .gedichtens .gedichten h4 {
+    font-size: 70px;
+  }
+}
 .gedichtens-over .wrapper .gedichtens .gedichten p {
-  font-size: 20px;
+  font-size: 18px;
   font-family: "Neucha";
   color: #D95A0D;
+}
+@media (min-width: 48rem) {
+  .gedichtens-over .wrapper .gedichtens .gedichten p {
+    font: 20px;
+  }
 }
 .gedichtens-over .wrapper .gedichtens .gedichten .btn1 {
   position: absolute;
@@ -816,6 +826,12 @@ section.points img {
 }
 .gedichtens-over .wrapper .gedichtens .gedichten .btn1 a {
   color: #fff;
+  font-size: 30px;
+}
+@media (min-width: 48rem) {
+  .gedichtens-over .wrapper .gedichtens .gedichten .btn1 a {
+    font-size: 40px;
+  }
 }
 .gedichtens-over .wrapper button {
   display: flex;
