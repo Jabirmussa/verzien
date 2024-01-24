@@ -41,17 +41,9 @@ body.lock-scrollbar {
   visibility: hidden;
 }
 
-@keyframes loading {
-  from {
-    transform: rotate(0turn);
-  }
-  to {
-    transform: rotate(1turn);
-  }
-}
 .wrapper {
   max-width: 1240px;
-  width: 90%;
+  width: 85%;
   margin: 0 auto;
 }
 @media (min-width: 48rem) {
@@ -411,10 +403,10 @@ body.open .menu-btn {
 @media (min-width: 60rem) {
   .body-text .wrapper .imag {
     transform: translateY(0%);
-    top: 0;
+    top: -22px;
     right: -94px;
-    height: 45%;
-    width: 25%;
+    height: 53%;
+    width: 28%;
   }
 }
 .body-text .wrapper .imag .svg2 {
@@ -443,8 +435,13 @@ body.open .menu-btn {
     padding: 64px 142px;
   }
 }
+@media (min-width: 60rem) {
+  .body-text .wrapper .body {
+    padding: 110px 190px 64px 110px;
+  }
+}
 .body-text .wrapper .body h3 {
-  font-size: 50px;
+  font-size: 35px;
   font-family: "Garden Grown US", sans-serif;
   font-weight: lighter;
   color: #3E7531;
@@ -457,10 +454,15 @@ body.open .menu-btn {
   }
 }
 .body-text .wrapper .body p {
-  font-size: 22px;
+  font-size: 18px;
   font-family: Neucha;
   color: #d95a0d;
   margin-bottom: 40px;
+}
+@media (min-width: 48rem) {
+  .body-text .wrapper .body p {
+    font-size: 22px;
+  }
 }
 .body-text .wrapper .body button {
   position: absolute;
@@ -523,17 +525,19 @@ body.open .menu-btn {
   font-size: 100px;
   font-family: "Garden Grown US";
   font-weight: lighter;
+  line-height: 222px;
 }
 @media (min-width: 48rem) {
   .over-views-shape .wrapper h1 {
     font-size: 150px;
-    margin-bottom: 200px;
+    margin-bottom: 50px;
   }
 }
 @media (min-width: 60rem) {
   .over-views-shape .wrapper h1 {
     font-size: 150px;
     margin-bottom: 40px;
+    bottom: -73px;
   }
 }
 .over-views-shape .child11 {
@@ -578,6 +582,7 @@ body.open .menu-btn {
   position: relative;
   background-color: #fff;
   border-radius: 0 100px;
+  margin-bottom: 20px;
 }
 @media (min-width: 48rem) {
   .over-views-shape .over-views .over-view {
@@ -591,7 +596,7 @@ body.open .menu-btn {
 }
 .over-views-shape .over-views h3 {
   margin: 20px 25px;
-  font-size: 40px;
+  font-size: 35px;
   font-family: "Garden Grown US";
   font-weight: lighter;
   color: #3E7531;
@@ -606,9 +611,14 @@ body.open .menu-btn {
 }
 .over-views-shape .over-views p {
   margin: 30px 25px;
-  font-size: 22px;
+  font-size: 18px;
   font-family: "Neucha";
   color: #d95a0d;
+}
+@media (min-width: 48rem) {
+  .over-views-shape .over-views p {
+    font-size: 22px;
+  }
 }
 @media (min-width: 60rem) {
   .over-views-shape .over-views p {
@@ -620,14 +630,15 @@ body.open .menu-btn {
   justify-content: end;
   text-align: right;
   text-decoration: underline;
-  font-size: 40px;
+  font-size: 35px;
   font-family: "Garden Grown US";
   color: #3E7531;
   margin-right: 55px;
+  line-height: 100px;
 }
-@media (min-width: 60rem) {
+@media (min-width: 48rem) {
   .over-views-shape .over-views a {
-    margin: 50px;
+    font-size: 40px;
   }
 }
 .over-views-shape .over-views img {
@@ -643,6 +654,7 @@ body.open .menu-btn {
   display: block;
   margin: 0 auto;
   margin-bottom: 150px;
+  margin-top: 60px;
 }
 @media (min-width: 60rem) {
   .over-views-shape button {
@@ -660,6 +672,14 @@ section.points {
   position: fixed;
   right: 5px;
   z-index: -1;
+}
+section.points img {
+  width: 8px;
+}
+@media (min-width: 48rem) {
+  section.points img {
+    width: 10px;
+  }
 }
 @media (min-width: 48rem) {
   section.points {
@@ -703,7 +723,7 @@ section.points {
 }
 @media (min-width: 48rem) {
   .gedichtens-over .shape {
-    width: 83%;
+    width: 72%;
     margin-top: 0;
   }
 }
@@ -758,7 +778,7 @@ section.points {
   background-image: url(/images/bg.jpeg);
   background-position: center;
   background-size: cover;
-  padding: 50px 70px 150px 35px;
+  padding: 50px 70px 80px 35px;
   margin-bottom: 80px;
 }
 @media (min-width: 90rem) {
@@ -769,15 +789,15 @@ section.points {
 .gedichtens-over .wrapper .gedichtens .gedichten img {
   position: absolute;
   right: 30px;
-  bottom: 50px;
-  width: 12px;
+  top: 30px;
+  width: 11px;
 }
 .gedichtens-over .wrapper .gedichtens .gedichten h4 {
   color: #D95A0D;
   font-family: "Garden Grown US";
   font-size: 70px;
   font-weight: lighter;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 .gedichtens-over .wrapper .gedichtens .gedichten p {
   font-size: 20px;
@@ -881,7 +901,7 @@ section.points {
 }
 
 .main-footer img {
-  margin-bottom: -4.92px;
+  margin-bottom: -4.93px;
 }
 .main-footer footer {
   background-color: #fff;
@@ -944,10 +964,12 @@ section.points {
   font-family: "Garden Grown US";
   color: #3E7531;
   font-weight: lighter;
+  margin-bottom: 20px;
 }
 @media (min-width: 48rem) {
   .main-footer footer .row .footer-col h4 {
     font-size: 50px;
+    line-height: 50px;
   }
 }
 .main-footer footer .row .footer-col ul li > a {

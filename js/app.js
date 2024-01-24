@@ -60,30 +60,3 @@ const observ = new IntersectionObserver ((entries)=>{
 })
 const elements = document.querySelectorAll(".animation");
 elements.forEach(element => observ.observe(element));
-
-
-const fs = require('fs');
-
-function readJsonFile(filePath) {
-  const fileContent = fs.readFileSync(filePath, 'utf-8');
-  return JSON.parse(fileContent);
-}
-
-function updateQuote() {
-  const jsonData = readJsonFile('./js/quotes.json');
-  const quotes = jsonData.quotes;
-
-  // Seleciona a tag h1 com o ID 'h1'
-  const h1Element = document.getElementById('h1');
-  if (h1Element) {
-    const randomIndex = Math.floor(Math.random() * quotes.length);
-    h1Element.textContent = quotes[randomIndex];
-  }
-  setTimeout(updateQuote, 2000);
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  // Chama a função para a primeira atualização
-  updateQuote();
-});
-
