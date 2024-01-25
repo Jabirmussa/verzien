@@ -298,6 +298,14 @@ body.open .menu-btn {
   object-fit: cover;
 }
 
+.body-text .wrapper-small .center {
+  margin-top: -110px;
+}
+@media (min-width: 48rem) {
+  .body-text .wrapper-small .center {
+    margin-top: -40px;
+  }
+}
 .body-text .wrapper-small .center h3 {
   text-align: center;
   text-shadow: 0px 3px 2px rgba(0, 0, 0, 0.1607843137);
@@ -516,6 +524,11 @@ body.open .menu-btn {
 .h1 {
   bottom: -23px;
 }
+@media (min-width: 48rem) {
+  .h1 {
+    bottom: 23px;
+  }
+}
 
 .over {
   overflow: hidden;
@@ -528,7 +541,7 @@ body.open .menu-btn {
   position: absolute;
   z-index: -1;
   left: 0;
-  width: 66%;
+  width: 80%;
 }
 .over-views-shape .wrapper h1 {
   position: relative;
@@ -557,7 +570,7 @@ body.open .menu-btn {
 }
 @media (min-width: 48rem) {
   .over-views-shape .child11 {
-    top: -180px;
+    top: -112px;
   }
 }
 .over-views-shape .child33 {
@@ -670,7 +683,7 @@ body.open .menu-btn {
 }
 @media (min-width: 60rem) {
   .over-views-shape button {
-    top: -120px;
+    top: -170px;
     margin-bottom: 0px;
   }
 }
@@ -690,7 +703,7 @@ section.points img {
 }
 @media (min-width: 48rem) {
   section.points img {
-    width: 10px;
+    width: 9px;
   }
 }
 @media (min-width: 48rem) {
@@ -735,7 +748,7 @@ section.points img {
 }
 @media (min-width: 48rem) {
   .gedichtens-over .shape {
-    width: 72%;
+    width: 67%;
     margin-top: 0;
   }
 }
@@ -746,6 +759,7 @@ section.points img {
   font-size: 80px;
   font-weight: lighter;
   margin-top: 60px;
+  text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1607843137);
 }
 @media (min-width: 48rem) {
   .gedichtens-over .wrapper h1 {
@@ -843,7 +857,6 @@ section.points img {
 }
 .gedichtens-over .wrapper button {
   display: flex;
-  margin: 0 auto;
   padding: 8px 24px;
   border-radius: 0 30px;
   border: none;
@@ -857,33 +870,44 @@ section.points img {
 }
 @media (min-width: 60rem) {
   .gedichtens-over .wrapper button {
-    margin-top: 0px;
+    margin-top: 56px;
   }
 }
 .gedichtens-over .wrapper button a {
   color: #D95A0D;
-  font-size: 40px;
+  font-size: 25px;
   font-family: "Garden Grown US";
+}
+@media (min-width: 48rem) {
+  .gedichtens-over .wrapper button a {
+    font-size: 40px;
+  }
 }
 
 .btn2 {
   display: flex;
-  margin: 0 auto;
+  margin: auto;
   padding: 8px 24px;
   border-radius: 0 30px;
   border: none;
   background-color: #fff;
+  margin-bottom: 30px;
 }
 @media (min-width: 48rem) {
   .btn2 {
     padding: 4px 34px;
-    margin: 50px auto;
+    margin-bottom: 130px;
   }
 }
 .btn2 a {
   color: #D95A0D;
-  font-size: 40px;
+  font-size: 25px;
   font-family: "Garden Grown US";
+}
+@media (min-width: 48rem) {
+  .btn2 a {
+    font-size: 40px;
+  }
 }
 
 .body-blog {
@@ -984,7 +1008,7 @@ section.points img {
 }
 @media (min-width: 60rem) {
   .main-footer footer .row .footer-col {
-    margin-top: -90px;
+    margin-top: -50px;
   }
 }
 .main-footer footer .row .footer-col h4 {
@@ -1043,21 +1067,17 @@ section.points img {
   }
   .from-left {
     transform: translateX(-120%);
-    overflow: none;
   }
   .from-right {
     transform: translateX(100%);
-    overflow: none;
   }
   .from-top {
     transform: translateY(-100%);
-    overflow: none;
   }
   .animation.show {
     opacity: 1;
     filter: blur(0);
     transform: translate(0);
-    overflow: none;
   }
 }
 

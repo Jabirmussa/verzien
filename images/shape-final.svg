@@ -6,12 +6,13 @@
 	.st0{fill:url(#SVGID_1_);}
 </style>
 <g>
-	<radialGradient id="SVGID_1_" cx="294.0103" cy="832.2346" r="986.2216" gradientUnits="userSpaceOnUse">
+	
+		<radialGradient id="SVGID_1_" cx="294.0103" cy="379.7654" r="986.1789" gradientTransform="matrix(1 0 0 -1 0 1212)" gradientUnits="userSpaceOnUse">
 		<stop  offset="0" style="stop-color:#448434"/>
 		<stop  offset="1" style="stop-color:#316831"/>
 	</radialGradient>
 	<path class="st0" d="M-2.4,1211.8h1320.7c92.7-150.6,124.4-318.2,98.1-478.7c-44.1-268.7-249.7-517.5-603.9-640.8
 		c0.4,0.1,0.7,0.3,1,0.5c-6.6-2.4-13.4-4.7-20.3-6.8c1.8,0.4,3.7,1,5.7,1.6c-142.4-48.4-290.7-70.8-437.4-71h-1.6
-		c-123.4,0-245.6,15.6-362.3,44.6V1211.8z"/>
+		c-123.4,0-245.6,15.6-362.3,44.6L-2.4,1211.8L-2.4,1211.8z"/>
 </g>
 </svg>
